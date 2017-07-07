@@ -1,0 +1,39 @@
+{
+  "name": "codingservice",
+  "version": "1.0.0",
+  "description": "Coding Service ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack  --progress --colors --watch",
+    "app": "webpack-dev-server --hot --inline --config webpack.config.js ",
+    "start": "nodemon dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://pchakravarthi@gitlab.athenahealth.com/pchakravarthi/codingservice.git"
+  },
+  "author": "Athena Health Technologies",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.6",
+    "graphql": "^0.10.3",
+    "graphql-tag": "^2.4.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "webpack": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "less-loader": "^4.0.4",
+    "nodemon": "^1.11.0",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "webpack-dev-server": "^2.5.0"
+  }
+}
