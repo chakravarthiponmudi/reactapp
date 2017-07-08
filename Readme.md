@@ -1,4 +1,4 @@
-#Skeleton for React Node Express GraphQL
+# Skeleton for React Node Express GraphQL
 
 I have written this skeleton for developing any webapp that is going to use a React and GraphQL Express Node server. This is useful as a beginner who wants to learn webapp programming.  It has the basic setup for anyone to start with the project.
 
@@ -13,7 +13,7 @@ I have written this skeleton for developing any webapp that is going to use a Re
  ```
 
  #### Build
- 
+
  From the shell, run **_npm run build_**.
 
  ```
