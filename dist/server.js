@@ -71,13 +71,17 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express_graphql__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express_graphql___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express_graphql__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_morgan__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_morgan___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_morgan__);
 var express = __webpack_require__(1);
 //var graphqlHTTP = require('express-graphql');
 
-var {buildSchema} = __webpack_require__(3);
+
+var {buildSchema} = __webpack_require__(4);
 //import {schema} from './graphql/sample.graphql'
 
 // Construct a schema, using GraphQL schema language
+
 var schema = buildSchema(`
   type Query {
     hello: String
@@ -104,10 +108,12 @@ var root = {
 };
 
 var app = express();
+app.use(__WEBPACK_IMPORTED_MODULE_1_morgan___default.a('combined'));
+
 app.use('/graphql', __WEBPACK_IMPORTED_MODULE_0_express_graphql___default.a({schema: schema, rootValue: root, graphiql: true}));
 app.listen(8081);
-console.log(schema)
-console.log('Running a GraphQL API server at localhost:8081/graphql');
+//console.log(schema)
+console.log('Running a GraphQL API server at localhost:8081/graphql!');
 
 
 /***/ }),
@@ -124,6 +130,12 @@ module.exports = require("express-graphql");
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("morgan");
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 module.exports = require("graphql");

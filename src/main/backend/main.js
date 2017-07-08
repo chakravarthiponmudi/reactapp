@@ -1,10 +1,12 @@
 var express = require('express');
 //var graphqlHTTP = require('express-graphql');
 import graphqlHTTP from 'express-graphql'
+import morgan from 'morgan'
 var {buildSchema} = require('graphql');
 //import {schema} from './graphql/sample.graphql'
 
 // Construct a schema, using GraphQL schema language
+
 var schema = buildSchema(`
   type Query {
     hello: String
@@ -31,7 +33,9 @@ var root = {
 };
 
 var app = express();
+app.use(morgan('combined'));
+
 app.use('/graphql', graphqlHTTP({schema: schema, rootValue: root, graphiql: true}));
 app.listen(8081);
-console.log(schema)
-console.log('Running a GraphQL API server at localhost:8081/graphql');
+//console.log(schema)
+console.log('Running a GraphQL API server at localhost:8081/graphql!');
